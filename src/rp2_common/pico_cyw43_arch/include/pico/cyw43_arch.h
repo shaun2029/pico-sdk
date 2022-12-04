@@ -187,7 +187,7 @@ void cyw43_arch_deinit(void);
  *
  * \return 0 if the initialization is successful, an error code otherwise \see pico_error_codes
  */
-int cyw43_arch_wifi_connect_blocking(const char *ssid, const char *pw, uint32_t auth);
+int cyw43_arch_wifi_connect_blocking(const char *ssid, const uint8_t *bssid, const char *pw, uint32_t auth);
 
 /*!
  * \brief Attempt to connect to a wireless access point, blocking until the network is joined, a failure is detected or a timeout occurs
@@ -200,7 +200,7 @@ int cyw43_arch_wifi_connect_blocking(const char *ssid, const char *pw, uint32_t 
  *
  * \return 0 if the initialization is successful, an error code otherwise \see pico_error_codes
  */
-int cyw43_arch_wifi_connect_timeout_ms(const char *ssid, const char *pw, uint32_t auth, uint32_t timeout);
+int cyw43_arch_wifi_connect_timeout_ms(const char *ssid, const uint8_t *bssid , const char *pw, uint32_t auth, uint32_t timeout);
 
 /*!
  * \brief Start attempting to connect to a wireless access point
@@ -216,7 +216,7 @@ int cyw43_arch_wifi_connect_timeout_ms(const char *ssid, const char *pw, uint32_
  *
  * \return 0 if the scan was started successfully, an error code otherwise \see pico_error_codes
  */
-int cyw43_arch_wifi_connect_async(const char *ssid, const char *pw, uint32_t auth);
+int cyw43_arch_wifi_connect_async(const char *ssid, const uint8_t *bssid, const char *pw, uint32_t auth);
 
 /*!
  * \brief Return the country code used to initialize cyw43_arch
